@@ -1,0 +1,28 @@
+import random
+import turtle
+from turtle import Turtle, Screen
+
+
+timmy = Turtle()
+timmy.speed("fastest")
+timmy.penup()
+turtle.colormode(255)
+color_list = [(238, 149, 69), (162, 167, 35), (149, 51, 97), (237, 68, 127), (239, 79, 56), (238, 221, 77)]
+height = 0
+timmy.hideturtle()
+
+
+def create_line():
+    for dots in range(1, 11):
+        timmy.color(random.choice(color_list))
+        timmy.dot(20)
+        timmy.forward(50)
+
+
+for rows in range(1, 11):
+    timmy.goto(0, height)
+    height += 50
+    create_line()
+
+
+turtle.exitonclick()
